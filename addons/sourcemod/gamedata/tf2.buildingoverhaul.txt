@@ -1,0 +1,262 @@
+"Games"
+{
+	"tf"
+	{
+		"MemPatches"
+		{
+			"CTFPlayer::TFPlayerThink_Patch"
+			{
+				"signature" "CTFPlayer::TFPlayerThink_Patch"
+				"patch" 	"\x85\xF6\x90\x90\x90\x90\x90"	// Same across os's
+			}
+		}
+		"Functions"
+		{
+			"CTFLaserPointer::DestroyLaserDot"
+			{
+				"signature" 	"CTFLaserPointer::DestroyLaserDot"
+				"callconv" 		"thiscall"
+				"return" 		"void"
+				"this" 			"entity"
+			}
+			"CTFLaserPointer::UpdateLaserDot"
+			{
+				"signature" 	"CTFLaserPointer::UpdateLaserDot"
+				"callconv" 		"thiscall"
+				"return" 		"void"
+				"this" 			"entity"
+			}
+			"CTFPlayer::TFPlayerThink"
+			{
+				"signature" 	"CTFPlayer::TFPlayerThink"
+				"callconv" 		"thiscall"
+				"return" 		"void"
+				"this" 			"entity"
+			}
+			"CTFPlayer::RemoveAllObjects"
+			{
+				"signature" 	"CTFPlayer::RemoveAllObjects"
+				"callconv" 		"thiscall"
+				"return" 		"void"
+				"this" 			"entity"
+				"arguments"
+				{
+					"explode"
+					{
+						"type" 	"bool"
+					}
+				}
+			}
+			"CObjectTeleporter::FindMatch"
+			{
+				"signature" 	"CObjectTeleporter::FindMatch"
+				"callconv" 		"thiscall"
+				"return" 		"cbaseentity"
+				"this" 			"entity"
+			}
+			"CTFPlayer::FinishedObject"
+			{
+				"signature" 	"CTFPlayer::FinishedObject"
+				"callconv" 		"thiscall"
+				"return" 		"void"
+				"this" 			"entity"
+				"arguments"
+				{
+					"object"
+					{
+						"type" 	"cbaseentity"
+					}
+				}
+			}
+			"CTFPlayer::RemoveObject"
+			{
+				"signature" 	"CTFPlayer::RemoveObject"
+				"callconv" 		"thiscall"
+				"return" 		"void"
+				"this" 			"entity"
+				"arguments"
+				{
+					"object"
+					{
+						"type" 	"cbaseentity"
+					}
+				}
+			}
+			"CTFPlayer::BuildObservableEntityList"
+			{
+				"signature" 	"CTFPlayer::BuildObservableEntityList"
+				"callconv" 		"thiscall"
+				"return" 		"void"
+				"this" 			"entity"
+			}
+			"CTFPlayer::TryToPickupBuilding"
+			{
+				"signature" 	"CTFPlayer::TryToPickupBuilding"
+				"callconv" 		"thiscall"
+				"return" 		"bool"
+				"this" 			"entity"
+			}
+			"CTFPlayer::GetObject"
+			{
+				"signature" 	"CTFPlayer::GetObject"
+				"callconv" 		"thiscall"
+				"return" 		"cbaseentity"
+				"this" 			"entity"
+				"arguments"
+				{
+					"index"
+					{
+						"type" 	"int"
+					}
+				}
+			}
+			"CTFPlayer::GetObjectCount"
+			{
+				"signature" 	"CTFPlayer::GetObjectCount"
+				"callconv" 		"thiscall"
+				"return" 		"int"
+				"this" 			"entity"
+			}
+		}
+		"Addresses"
+		{
+			"CTFGameStats"
+			{
+				"signature" 	"CTFPlayer::FinishedObject"
+				"linux"
+				{
+					"read" 	"38"
+				}
+				"windows"
+				{
+					"read" 	"89"
+				}
+			}
+		}
+		"Signatures"
+		{
+			"CSniperDot::Update"
+			{
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x56\xFF\x75\x0C\x8B\xF1\xE8\x2A\x2A\x2A\x2A\x8B\x45\x10"
+				"linux" 	"@_ZN10CSniperDot6UpdateEP11CBaseEntityRK6VectorS4_"
+			}
+			"CBaseEntity::CalcAbsolutePosition"
+			{
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x81\xEC\x80\x00\x00\x00\x56\x8B\xF1\x8B\x86\x14\x01\x00\x00"
+				"linux" 	"@_ZN11CBaseEntity20CalcAbsolutePositionEv"
+			}
+			"CCollisionProperty::SetSolid"
+			{
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x83\xEC\x18\x53\x56\x8B\xF1\x8A\x4E\x41"
+				"linux" 	"@_ZN18CCollisionProperty8SetSolidE11SolidType_t"
+			}
+			"CTFLaserPointer::DestroyLaserDot"
+			{
+				"library" 	"server"
+				"windows" 	"\x56\x57\x8B\xF1\xE8\x2A\x2A\x2A\x2A\x8B\xF8\x85\xFF\x74\x2A\x8B\x17\x8B\xCF\x8B\x92\x40\x01\x00\x00\xFF\xD2\x84\xC0\x74\x2A\x6A\x00"
+				"linux" 	"@_ZN15CTFLaserPointer15DestroyLaserDotEv"
+			}
+			"CTFLaserPointer::UpdateLaserDot"
+			{
+				"library" 	"server"
+				"windows" 	"\x53\x8B\xDC\x83\xEC\x08\x83\xE4\xF0\x83\xC4\x04\x55\x8B\x6B\x04\x89\x6C\x24\x04\x8B\xEC\x81\xEC\xF8\x00\x00\x00\x56\x8B\xC1"
+				"linux" 	"@_ZN15CTFLaserPointer14UpdateLaserDotEv"
+			}
+			"CTFPlayer::TFPlayerThink"
+			{
+				"library" 	"server"
+				"windows" 	"\x53\x8B\xDC\x83\xEC\x08\x83\xE4\xF0\x83\xC4\x04\x55\x8B\x6B\x04\x89\x6C\x24\x04\x8B\xEC\x81\xEC\x78\x01\x00\x00\x56\x57\x8B\xF9\x89\x7D\xEC"
+				"linux" 	"@_ZN9CTFPlayer13TFPlayerThinkEv"
+			}
+			"CTFPlayer::RemoveAllObjects"
+			{
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x83\xEC\x08\x8B\xC1\x57"
+				"linux" 	"@_ZN9CTFPlayer16RemoveAllObjectsEb"
+			}
+			"CObjectTeleporter::FindMatch"
+			{
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x83\xEC\x0C\x53\x8B\xD9\x56\x8B\x03"
+				"linux" 	"@_ZN17CObjectTeleporter9FindMatchEv"
+			}
+			// CTFPlayer::AddObject is inlined on Windows, sad
+			"CTFPlayer::FinishedObject"
+			{
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x53\x8B\x5D\x08\x56\x57\x8B\xF9\x85\xDB\x74\x2A\x8B\x03\x8B\xCB\xFF\x50\x08\x8B\xCB"
+				"linux" 	"@_ZN9CTFPlayer14FinishedObjectEP11CBaseObject"
+			}
+			"CTFPlayer::RemoveObject"
+			{
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x8B\xD1\x56\x8B\xB2\x8C\x21\x00\x00"
+				"linux" 	"@_ZN9CTFPlayer12RemoveObjectEP11CBaseObject"
+			}
+			"CTFPlayer::BuildObservableEntityList"
+			{
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x83\xEC\x14\x53\x56\x8B\xF1\x57\x8D\xBE\xB0\x21\x00\x00"
+				"linux" 	"@_ZN9CTFPlayer25BuildObservableEntityListEv"
+			}
+			"CTFPlayer::TFPlayerThink_Patch"
+			{
+				"library" 	"server"
+				"windows"	"\x80\xBF\x2A\x2A\x2A\x2A\x00\x0F\x85\x2A\x2A\x2A\x2A\x8D\x87\x2A\x2A\x2A\x2A"
+				"linux"		"\x80\xBE\x2A\x2A\x2A\x2A\x00\x75\x2A\x83\xBE\x2A\x2A\x2A\x2A\x09"
+			}
+			"CTFGameStats::Event_PlayerCreatedBuilding"
+			{
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x57\x6A\x00\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\x6A\x00\xFF\x75\x0C\x8B\xF9\xE8\x2A\x2A\x2A\x2A\x83\xC4\x14\x85\xC0\x75\x2A\x6A\x01\x6A\x13"
+				"linux" 	"@_ZN12CTFGameStats27Event_PlayerCreatedBuildingEP9CTFPlayerP11CBaseObject"
+			}
+			"CTFPlayer::TryToPickupBuilding"
+			{
+				"library" 	"server"
+				"windows" 	"\x53\x8B\xDC\x83\xEC\x08\x83\xE4\xF0\x83\xC4\x04\x55\x8B\x6B\x04\x89\x6C\x24\x04\x8B\xEC\x81\xEC\x78\x01\x00\x00\x56\x57\x8B\xF9\x80\xBF\x38\x1D\x00\x00\x00"
+				"linux" 	"@_ZN9CTFPlayer19TryToPickupBuildingEv"
+			}
+			// Not a good Windows sig, will probs break in the future
+			"CTFPlayer::GetObject"
+			{
+				"library" 	"server"
+				"windows" 	"\x55\x8B\xEC\x8B\x89\x80\x21\x00\x00"
+				"linux" 	"@_ZNK9CTFPlayer9GetObjectEi"
+			}
+			// Also not a good Windows sig, how does this not get inlined lmao
+			"CTFPlayer::GetObjectCount"
+			{
+				"library" 	"server"
+				"windows" 	"\x8B\x81\x8C\x21\x00\x00"
+				"linux" 	"@_ZNK9CTFPlayer14GetObjectCountEv"
+			}
+		}
+		"Offsets"
+		{
+			"CTFLaserPointer::CanAttack"
+			{
+				"windows" 	"418"
+				"linux" 	"425"
+			}
+			"CTFWeaponBase::SendWeaponAnim"
+			{
+				"windows" 	"243"
+				"linux" 	"249"
+			}
+			"CTFLaserPointer::PrimaryAttack"
+			{
+				"windows" 	"280"
+				"linux" 	"286"
+			}
+			"CTFLaserPointer::SecondaryAttack"
+			{
+				"windows" 	"281"
+				"linux" 	"287"
+			}
+		}
+	}
+}
