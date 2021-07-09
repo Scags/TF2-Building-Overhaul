@@ -201,8 +201,8 @@ public void OnPluginStart()
 	delete conf;
 
 	cvMax[0] = CreateConVar("sm_buildingov_max_dispenser", "999", "Max amount of dispensers", FCVAR_NOTIFY, true, 1.0);
-	cvMax[1] = CreateConVar("sm_buildingov_max_sentry", "999", "Max amount of sentries", FCVAR_NOTIFY, true, 1.0);
-	cvMax[2] = CreateConVar("sm_buildingov_max_teleporter", "999", "Max amount of teleporters. Counts for each set i.e. setting to 3 means 3 sets of teleporters.", FCVAR_NOTIFY, true, 1.0);
+	cvMax[1] = CreateConVar("sm_buildingov_max_teleporter", "999", "Max amount of teleporters. Counts for each set i.e. setting to 3 means 3 sets of teleporters.", FCVAR_NOTIFY, true, 1.0);
+	cvMax[2] = CreateConVar("sm_buildingov_max_sentry", "999", "Max amount of sentries", FCVAR_NOTIFY, true, 1.0);
 
 	AutoExecConfig(true, "TF2BuildingOverhaul");
 
@@ -225,7 +225,7 @@ public void OnClientPutInServer(int client)
 	SDKHook(client, SDKHook_WeaponSwitch, OnWeaponSwitch);
 }
 
-public void OnClientDisconnect(int client)
+public void OnClientDisconnect_Post(int client)
 {
 	delete g_ActualObjects[client];
 }
@@ -665,6 +665,9 @@ public Action OnPlayerRunCsmd(int client)
 
 public MRESReturn CTFPlayer_RemoveObject(int pThis, DHookParam hParams)
 {
+	if (!g_ActualObjects[pThis])
+		return MRES_Ignored;
+
 	int obj = hParams.Get(1);
 	int idx = g_ActualObjects[pThis].FindValue(EntIndexToEntRef(obj));
 	TFObjectType type = TF2_GetObjectType(obj);
@@ -680,10 +683,14 @@ public MRESReturn CTFPlayer_RemoveObject(int pThis, DHookParam hParams)
 		if (m_aObjects.FindEx(handle) == -1)
 			m_aObjects.AddToTail(handle);
 	}
+	return MRES_Ignored;
 }
 
 public MRESReturn CTFPlayer_BuildObservableEntityList(int pThis, DHookReturn hReturn)
 {
+	if (!g_ActualObjects[pThis])
+		return MRES_Ignored;
+
 	int iNumObjects = GetNumObjects(pThis);
 	CUtlVector m_hObservableEntities = GetObservableEntities(pThis);
 	int currentidx = -1;
@@ -956,7 +963,7 @@ stock void AllowBuilding(int client)
 
 		TFObjectType currtype = TF2_GetObjectType(foundobj);
 		if (currtype == TFObject_Teleporter)
-			remove |= teleportercount[view_as< int >(TF2_GetObjectMode(foundobj))] < cvMax[2].IntValue;
+			remove |= teleportercount[view_as< int >(TF2_GetObjectMode(foundobj))] < cvMax[1].IntValue;
 
 		remove |= count[view_as< int >(currtype)] < cvMax[view_as< int >(currtype)].IntValue;
 
