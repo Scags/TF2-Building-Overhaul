@@ -607,7 +607,7 @@ public MRESReturn CTFPlayer_FinishedObject(int pThis, DHookParam hParams)
 	if (numobjs > 0)
 	{
 		ObjectInfo info2;
-		bool[] objchecker = new bool[numobjs];
+		int highestbuildnumber;
 		for (int i = numobjs-1; i >= 0; --i)
 		{
 			g_ActualObjects[pThis].GetArray(i, info2);
@@ -616,6 +616,21 @@ public MRESReturn CTFPlayer_FinishedObject(int pThis, DHookParam hParams)
 				g_ActualObjects[pThis].Erase(i);
 				continue;
 			}
+
+			if (info2.GetType() != type)
+				continue;
+
+			if (type == TFObject_Teleporter && info2.GetMode() != mode)
+				continue;
+
+			if (highestbuildnumber < info2.buildnumber)
+				highestbuildnumber = info2.buildnumber;
+		}
+
+		bool[] objchecker = new bool[highestbuildnumber+1];
+		for (int i = numobjs-1; i >= 0; --i)
+		{
+			g_ActualObjects[pThis].GetArray(i, info2);
 
 			if (info2.GetType() != type)
 				continue;
