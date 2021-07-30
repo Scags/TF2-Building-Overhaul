@@ -607,7 +607,7 @@ public MRESReturn CTFPlayer_FinishedObject(int pThis, DHookParam hParams)
 	if (numobjs > 0)
 	{
 		ObjectInfo info2;
-		int highestbuildnumber;
+		int highestbuildnumber = numobjs;
 		for (int i = numobjs-1; i >= 0; --i)
 		{
 			g_ActualObjects[pThis].GetArray(i, info2);
