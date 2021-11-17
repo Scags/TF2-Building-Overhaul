@@ -239,23 +239,23 @@
 		{
 			"CTFLaserPointer::CanAttack"
 			{
-				"windows" 	"418"
-				"linux" 	"425"
+				"windows" 	"421"
+				"linux" 	"428"
 			}
 			"CTFWeaponBase::SendWeaponAnim"
 			{
-				"windows" 	"243"
-				"linux" 	"249"
+				"windows" 	"246"
+				"linux" 	"252"
 			}
 			"CTFLaserPointer::PrimaryAttack"
 			{
-				"windows" 	"280"
-				"linux" 	"286"
+				"windows" 	"283"
+				"linux" 	"289"
 			}
 			"CTFLaserPointer::SecondaryAttack"
 			{
-				"windows" 	"281"
-				"linux" 	"287"
+				"windows" 	"284"
+				"linux" 	"290"
 			}
 		}
 	}
