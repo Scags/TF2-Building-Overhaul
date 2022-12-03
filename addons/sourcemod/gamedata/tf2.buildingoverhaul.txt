@@ -144,7 +144,7 @@
 			"CBaseEntity::CalcAbsolutePosition"
 			{
 				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x81\xEC\x80\x00\x00\x00\x56\x8B\xF1\x8B\x86\x14\x01\x00\x00"
+				"windows" 	"\x55\x8B\xEC\x81\xEC\x80\x00\x00\x00\x56\x8B\xF1\x8B\x86\x2A\x01\x00\x00"
 				"linux" 	"@_ZN11CBaseEntity20CalcAbsolutePositionEv"
 			}
 			"CCollisionProperty::SetSolid"
@@ -156,7 +156,7 @@
 			"CTFLaserPointer::DestroyLaserDot"
 			{
 				"library" 	"server"
-				"windows" 	"\x56\x57\x8B\xF1\xE8\x2A\x2A\x2A\x2A\x8B\xF8\x85\xFF\x74\x2A\x8B\x17\x8B\xCF\x8B\x92\x40\x01\x00\x00\xFF\xD2\x84\xC0\x74\x2A\x6A\x00"
+				"windows" 	"\x56\x57\x8B\xF9\xE8\x2A\x2A\x2A\x2A\x8B\xF0\x85\xF6\x74\x2A\x8B\x16\x8B\xCE\x8B\x92\x48\x01\x00\x00\xFF\xD2\x84\xC0\x74\x2A\x6A\x00\x68\x2A\x2A\x2A\x2A"
 				"linux" 	"@_ZN15CTFLaserPointer15DestroyLaserDotEv"
 			}
 			"CTFLaserPointer::UpdateLaserDot"
@@ -174,7 +174,7 @@
 			"CTFPlayer::RemoveAllObjects"
 			{
 				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x83\xEC\x08\x8B\xC1\x57"
+				"windows" 	"\x55\x8B\xEC\x83\xEC\x08\x8B\xC1\x56\x89\x45\xF8"
 				"linux" 	"@_ZN9CTFPlayer16RemoveAllObjectsEb"
 			}
 			"CObjectTeleporter::FindMatch"
@@ -187,19 +187,19 @@
 			"CTFPlayer::FinishedObject"
 			{
 				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x53\x8B\x5D\x08\x56\x57\x8B\xF9\x85\xDB\x74\x2A\x8B\x03\x8B\xCB\xFF\x50\x08\x8B\xCB"
+				"windows" 	"\x55\x8B\xEC\x56\x57\x8B\x7D\x08\x8B\xF1\x57\xE8\x2A\x2A\x2A\x2A\x57"
 				"linux" 	"@_ZN9CTFPlayer14FinishedObjectEP11CBaseObject"
 			}
 			"CTFPlayer::RemoveObject"
 			{
 				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x8B\xD1\x56\x8B\xB2\x8C\x21\x00\x00"
+				"windows" 	"\x55\x8B\xEC\x56\x8B\xF1\x57\x8B\xBE\x2A\x22\x00\x00"
 				"linux" 	"@_ZN9CTFPlayer12RemoveObjectEP11CBaseObject"
 			}
 			"CTFPlayer::BuildObservableEntityList"
 			{
 				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x83\xEC\x14\x53\x56\x8B\xF1\x57\x8D\xBE\xB0\x21\x00\x00"
+				"windows" 	"\x55\x8B\xEC\x83\xEC\x14\x53\x56\x8B\xF1\x57\x8D\xBE\x2A\x2A\x00\x00"
 				"linux" 	"@_ZN9CTFPlayer25BuildObservableEntityListEv"
 			}
 			"CTFPlayer::TFPlayerThink_Patch"
@@ -224,14 +224,14 @@
 			"CTFPlayer::GetObject"
 			{
 				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x8B\x89\x80\x21\x00\x00"
+				"windows" 	"\x55\x8B\xEC\x8B\x89\xB0\x22\x00\x00"
 				"linux" 	"@_ZNK9CTFPlayer9GetObjectEi"
 			}
 			// Also not a good Windows sig, how does this not get inlined lmao
 			"CTFPlayer::GetObjectCount"
 			{
 				"library" 	"server"
-				"windows" 	"\x8B\x81\x8C\x21\x00\x00"
+				"windows" 	"\x8B\x81\xBC\x22\x00\x00"
 				"linux" 	"@_ZNK9CTFPlayer14GetObjectCountEv"
 			}
 		}
@@ -239,23 +239,23 @@
 		{
 			"CTFLaserPointer::CanAttack"
 			{
-				"windows" 	"421"
-				"linux" 	"428"
+				"windows" 	"424"
+				"linux" 	"431"
 			}
 			"CTFWeaponBase::SendWeaponAnim"
 			{
-				"windows" 	"246"
-				"linux" 	"252"
+				"windows" 	"249"
+				"linux" 	"255"
 			}
 			"CTFLaserPointer::PrimaryAttack"
 			{
-				"windows" 	"283"
-				"linux" 	"289"
+				"windows" 	"286"
+				"linux" 	"292"
 			}
 			"CTFLaserPointer::SecondaryAttack"
 			{
-				"windows" 	"284"
-				"linux" 	"290"
+				"windows" 	"287"
+				"linux" 	"293"
 			}
 		}
 	}
