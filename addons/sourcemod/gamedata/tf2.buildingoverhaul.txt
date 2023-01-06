@@ -239,8 +239,8 @@
 		{
 			"CTFLaserPointer::CanAttack"
 			{
-				"windows" 	"424"
-				"linux" 	"431"
+				"windows" 	"425"
+				"linux" 	"432"
 			}
 			"CTFWeaponBase::SendWeaponAnim"
 			{
