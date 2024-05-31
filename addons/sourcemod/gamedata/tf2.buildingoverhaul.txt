@@ -125,7 +125,7 @@
 				"signature" 	"CTFPlayer::FinishedObject"
 				"linux"
 				{
-					"read" 	"38"
+					"read" 	"39"
 				}
 				"windows"
 				{
