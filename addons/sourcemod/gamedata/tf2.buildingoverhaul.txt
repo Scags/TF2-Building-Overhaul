@@ -150,7 +150,7 @@
 			"CCollisionProperty::SetSolid"
 			{
 				"library" 	"server"
-				"windows" 	"\x55\x8B\xEC\x83\xEC\x18\x53\x56\x8B\xF1\x8A\x4E\x41"
+				"windows" 	"\x55\x8B\xEC\x83\xEC\x18\x53\x8B\x5D\x08\x56\x8B\xF1\x8A\x4E\x41"
 				"linux" 	"@_ZN18CCollisionProperty8SetSolidE11SolidType_t"
 			}
 			"CTFLaserPointer::DestroyLaserDot"
